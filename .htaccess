@@ -1,0 +1,5 @@
+
+RewriteEngine On
+#redirect http://mail.dumaskennel.com to WebMail interface
+RewriteCond %{HTTP_HOST} ^mail.dumaskennel.com [NC]
+RewriteRule ^(.*) https://dumaskennel.com:2096/ [L,R]

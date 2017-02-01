@@ -1,0 +1,124 @@
+*, html {
+	font-family: Arial,sans-serif;
+}
+
+div#div_login {
+    background-color: #4c8207;
+    height: 336px;
+    margin: 0px auto;
+    margin-top: 70px; 
+    width: 550px;
+    border-radius: 15px;
+}
+.login-title{
+	color: white;
+}
+
+.login-label{
+	color: #EEEEEE;
+}
+
+.logout{
+	float:right;
+	width: 100px;
+}
+
+.error-login {
+	color: #790a0a;
+}
+
+.menu-button {
+	display: inline-block;
+	border: 1px solid;
+	border-radius: 5px;
+    padding: 10px;
+    width: 100px;
+    margin: 10px;
+    background: #b0c5b0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#logout {
+	max-width: 1000px;
+    padding-top: 5px;
+    margin: 0px auto;
+}
+.logout-button {
+	border: 1px solid;
+	border-radius: 5px;
+    padding: 5px;
+    width: 55px;
+    background: #dbdedb;
+    text-decoration: none;
+    font-weight: bold;
+    color: #ca0404;
+}
+
+#div_mops, #div_pui, #div_monta {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+#table_mops, #table_pui, #table_monta {
+	background-color: #b0c5b0;
+}
+
+#add_new_mop, #add_new_pui, #add_new_monta {
+	float: left;
+    margin: 20px 0px 20px 0px;
+    font-size: medium;
+    font-weight: bold;
+    color: green;
+    border-radius: 5px;
+    background: #d4ffd4;
+}
+
+input, select, textarea {
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #555555;
+    padding: 5px;
+	min-width: 250px;
+	max-width: 250px;
+	background: #fefefe; /* Old browsers */
+	background: -moz-linear-gradient(top,  #fefefe 0%, #d1d1d1 49%, #dbdbdb 50%, #e2e2e2 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefefe), color-stop(49%,#d1d1d1), color-stop(50%,#dbdbdb), color-stop(100%,#e2e2e2)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #fefefe 0%,#d1d1d1 49%,#dbdbdb 50%,#e2e2e2 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #fefefe 0%,#d1d1d1 49%,#dbdbdb 50%,#e2e2e2 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #fefefe 0%,#d1d1d1 49%,#dbdbdb 50%,#e2e2e2 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #fefefe 0%,#d1d1d1 49%,#dbdbdb 50%,#e2e2e2 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#e2e2e2',GradientType=0 ); /* IE6-9 */
+}
+
+input:focus, textarea:focus, select:focus {
+    background-color: #D1D0D0;
+}
+
+.submit-button {
+	color: green;
+	font-weight: 900;
+}
+
+.image-input{
+	all:initial;
+	font-family: Arial,sans-serif;
+    max-width: 300px;
+}
+
+.radio-input{
+    min-width: 20px;
+}
+
+.hidden {
+	display: none;
+}
+
+a { color: inherit; } 
+
+.delete-mop, .delete-pui, .delete-monta {
+	width: 15px;
+	cursor: pointer;
+}
+.delete-mop:hover, .delete-pui:hover, .delete-monta:hover {
+	background: #ccc;
+}
