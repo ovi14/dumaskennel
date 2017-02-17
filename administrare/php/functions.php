@@ -45,9 +45,9 @@ function addMop($nume, $titlu, $sex, $parinti, $data, $pedigree,
 			    poza1, poza2, poza3, poza4, poza5, 
 			    poza6, nume_en, titlu_en, parinti_en )
 			VALUES
-			  ('".$nume."', '".$titlu."', '".$sex."', '".$parinti."', '".$pedigree."', '".$data."', '".$poza1."', '".$poza2."', '".$poza3."', '".$poza4."', '".$poza5."', '".$poza6."', '".$nume_en."', '".$titlu_en."', '".$parinti_en."')";
+			  ('".escapeQuotes($nume)."', '".escapeQuotes($titlu)."', '".$sex."', '".escapeQuotes($parinti)."', '".$pedigree."', '".$data."', '".$poza1."', '".$poza2."', '".$poza3."', '".$poza4."', '".$poza5."', '".$poza6."', '".escapeQuotes($nume_en)."', '".escapeQuotes($titlu_en)."', '".escapeQuotes($parinti_en)."')";
 	// echo $sql;
-	mysql_query($sql, $sock);
+	mysql_query(mysql_real_escape_string($sql), $sock);
 	
 }
 
@@ -58,10 +58,10 @@ function updateMop( $id, $nume, $titlu, $sex, $parinti, $data,
 	
 	$sql = "UPDATE mops
 			SET
-				nume = '".$nume."',
-				titlu = '".$titlu."',
+				nume = '".escapeQuotes($nume)."',
+				titlu = '".escapeQuotes($titlu)."',
 				sex = '".$sex."',
-				parinti = '".$parinti."',
+				parinti = '".escapeQuotes($parinti)."',
 				pedigree = '".$pedigree."',
 				data = '".$data."',
 				poza1 = '".$poza1."',
@@ -70,9 +70,9 @@ function updateMop( $id, $nume, $titlu, $sex, $parinti, $data,
 				poza4 = '".$poza4."',
 				poza5 = '".$poza5."',
 				poza6 = '".$poza6."',
-				nume_en = '".$nume_en."',
-				titlu_en = '".$titlu_en."',
-				parinti_en = '".$parinti_en."'
+				nume_en = '".escapeQuotes($nume_en)."',
+				titlu_en = '".escapeQuotes($titlu_en)."',
+				parinti_en = '".escapeQuotes($parinti_en)."'
 			WHERE
 			  id = ".$id;
 	// echo $sql;		  
@@ -85,7 +85,8 @@ function getMopById($id_mop){
 	$row = array();
 
 	$sql = "SELECT * FROM mops 
-			WHERE id=".$id_mop;
+			WHERE id=".$id_mop."
+			  AND del=0";
 	$res = mysql_query($sql, $sock);
 
 	if ((is_Resource($res)) && (mysql_num_rows($res) > 0)) {
@@ -127,7 +128,7 @@ function addPui($nume, $titlu, $sex, $parinti, $data, $pedigree,
 			    poza1, poza2, poza3, poza4, poza5, 
 			    poza6, nume_en, titlu_en, parinti_en )
 			VALUES
-			  ('".$nume."', '".$titlu."', '".$sex."', '".$parinti."', '".$pedigree."', '".$data."', '".$poza1."', '".$poza2."', '".$poza3."', '".$poza4."', '".$poza5."', '".$poza6."', '".$nume_en."', '".$titlu_en."', '".$parinti_en."')";
+			  ('".escapeQuotes($nume)."', '".escapeQuotes($titlu)."', '".$sex."', '".escapeQuotes($parinti)."', '".$pedigree."', '".$data."', '".$poza1."', '".$poza2."', '".$poza3."', '".$poza4."', '".$poza5."', '".$poza6."', '".escapeQuotes($nume_en)."', '".escapeQuotes($titlu_en)."', '".escapeQuotes($parinti_en)."')";
 	// echo $sql;
 	mysql_query($sql, $sock);
 	
@@ -140,10 +141,10 @@ function updatePui( $id, $nume, $titlu, $sex, $parinti, $data,
 	
 	$sql = "UPDATE pui
 			SET
-				nume = '".$nume."',
-				titlu = '".$titlu."',
+				nume = '".escapeQuotes($nume)."',
+				titlu = '".escapeQuotes($titlu)."',
 				sex = '".$sex."',
-				parinti = '".$parinti."',
+				parinti = '".escapeQuotes($parinti)."',
 				pedigree = '".$pedigree."',
 				data = '".$data."',
 				poza1 = '".$poza1."',
@@ -152,9 +153,9 @@ function updatePui( $id, $nume, $titlu, $sex, $parinti, $data,
 				poza4 = '".$poza4."',
 				poza5 = '".$poza5."',
 				poza6 = '".$poza6."',
-				nume_en = '".$nume_en."',
-				titlu_en = '".$titlu_en."',
-				parinti_en = '".$parinti_en."'
+				nume_en = '".escapeQuotes($nume_en)."',
+				titlu_en = '".escapeQuotes($titlu_en)."',
+				parinti_en = '".escapeQuotes($parinti_en)."'
 			WHERE
 			  id = ".$id;
 	// echo $sql;		  
@@ -167,7 +168,8 @@ function getPuiById($id_pui){
 	$row = array();
 
 	$sql = "SELECT * FROM pui 
-			WHERE id=".$id_pui;
+			WHERE id=".$id_pui."
+			  AND del=0";
 	$res = mysql_query($sql, $sock);
 
 	if ((is_Resource($res)) && (mysql_num_rows($res) > 0)) {
@@ -230,7 +232,8 @@ function getMontaById($id_monta){
 	$row = array();
 
 	$sql = "SELECT * FROM monta 
-			WHERE id=".$id_monta;
+			WHERE id=".$id_monta."
+			  AND del=0";
 	$res = mysql_query($sql, $sock);
 
 	if ((is_Resource($res)) && (mysql_num_rows($res) > 0)) {
@@ -248,6 +251,12 @@ function deleteById($id, $table) {
 			WHERE id = ".$id;
 	echo $sql;
 	mysql_query($sql);
+}
+
+function escapeQuotes($string) {
+	$string = str_replace("'", "\'", $string);
+	$string = str_replace('"', '\"', $string);
+	return $string;
 }
 
 ?>
