@@ -28,7 +28,7 @@
           </ul>
         </div>
         <div class="gadget">
-          <h2 class="star"><span>Recomended</span></h2>
+          <h2 class="star"><span>Recommended</span></h2>
           <ul class="ex_menu">
             <li><a href="http://www.artadresajuluicanin.ro" title="Profesional Dog training">Profesional Dog training</a><br />Profesioanl dog training in Timisoara and around</li>
             <li><a href="http://www.nik-majestic.com/" title="Canisa Nik Majestic">Canisa Nik Majestic</a><br />Canisa Nik Majestic - Tosa Inu</li>
