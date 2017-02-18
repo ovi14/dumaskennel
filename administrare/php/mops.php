@@ -65,23 +65,23 @@ $mops_params = isset($_GET['edit_id']) ? "&edit_id=".$_GET['edit_id'] : "";
 			<table border="0">
 				<tr>
 					<th></th>
-					<th>RO</th>
-					<th>EN</th>
+					<th><img src="images/uk.png" width="25"></th>
+					<th><img src="images/ro.png" width="28"></th>
 				</tr>
 				<tr>
 					<td>Nume: </td>
-					<td><input type="text" name="nume" value="<?= $mop_edit['nume']?>"/></td>
 					<td><input type="text" name="nume_en" value="<?= $mop_edit['nume_en']?>"/></td>
+					<td><input type="text" name="nume" value="<?= $mop_edit['nume']?>"/></td>
 				</tr>
 				<tr>
 					<td>Titlu: </td>
-					<td><input type="text" name="titlu" value="<?= $mop_edit['titlu']?>"/></td>
 					<td><input type="text" name="titlu_en" value="<?= $mop_edit['titlu_en']?>"/></td>
+					<td><input type="text" name="titlu" value="<?= $mop_edit['titlu']?>"/></td>
 				</tr>
 				<tr>
 					<td>Parinti: </td>
-					<td><input type="text" name="parinti" value="<?= $mop_edit['parinti']?>"/></td>
 					<td><input type="text" name="parinti_en" value="<?= $mop_edit['parinti_en']?>"/></td>
+					<td><input type="text" name="parinti" value="<?= $mop_edit['parinti']?>"/></td>
 				</tr>
 				<tr>
 					<td>Sex: </td>
@@ -159,8 +159,8 @@ $mops_params = isset($_GET['edit_id']) ? "&edit_id=".$_GET['edit_id'] : "";
 			<?php foreach($mops as $mop) { ?>
 			<tr>
 				<td><?= $mop['id'] ?></td>
-				<td><?= $mop['nume'] ?></td>
-				<td><?= $mop['titlu'] ?></td>
+				<td><?= $mop['nume_en'] ?></td>
+				<td><?= $mop['titlu_en'] ?></td>
 				<td><?= $mop['data'] ?></td>
 				<td><a href="?mops&modifica&edit_id=<?= $mop['id'] ?>">Modifica</a></td>
 				<td><img src="images/delete.png" class="delete-mop" id="<?= $mop['id'] ?>" table="mops"/></td>

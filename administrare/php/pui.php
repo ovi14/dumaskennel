@@ -65,23 +65,23 @@ $pui_params = isset($_GET['edit_id']) ? "&edit_id=".$_GET['edit_id'] : "";
 			<table border="0">
 				<tr>
 					<th></th>
-					<th>RO</th>
-					<th>EN</th>
+					<th><img src="images/uk.png" width="25"></th>
+					<th><img src="images/ro.png" width="28"></th>
 				</tr>
 				<tr class="hidden">
 					<td>Nume: </td>
-					<td><input type="text" name="nume" value="<?= $pui_edit['nume']?>"/></td>
 					<td><input type="text" name="nume_en" value="<?= $pui_edit['nume_en']?>"/></td>
+					<td><input type="text" name="nume" value="<?= $pui_edit['nume']?>"/></td>
 				</tr>
 				<tr class="hidden">
 					<td>Titlu: </td>
-					<td><input type="text" name="titlu" value="<?= $pui_edit['titlu']?>"/></td>
 					<td><input type="text" name="titlu_en" value="<?= $pui_edit['titlu_en']?>"/></td>
+					<td><input type="text" name="titlu" value="<?= $pui_edit['titlu']?>"/></td>
 				</tr>
 				<tr>
 					<td>Parinti: </td>
-					<td><input type="text" name="parinti" value="<?= $pui_edit['parinti']?>"/></td>
 					<td><input type="text" name="parinti_en" value="<?= $pui_edit['parinti_en']?>"/></td>
+					<td><input type="text" name="parinti" value="<?= $pui_edit['parinti']?>"/></td>
 				</tr>
 				<tr>
 					<td>Sex: </td>
@@ -148,8 +148,7 @@ $pui_params = isset($_GET['edit_id']) ? "&edit_id=".$_GET['edit_id'] : "";
 		<thead>
 			<tr>
 				<th>ID</th>
-				<th>NUME</th>
-				<th>TITLU</th>
+				<th>PARINTI</th>
 				<th>DATA</th>
 				<th>MODIFICA</th>
 				<th>STERGE</th>
@@ -159,8 +158,7 @@ $pui_params = isset($_GET['edit_id']) ? "&edit_id=".$_GET['edit_id'] : "";
 			<?php foreach($pui as $p) { ?>
 			<tr>
 				<td><?= $p['id'] ?></td>
-				<td><?= $p['nume'] ?></td>
-				<td><?= $p['titlu'] ?></td>
+				<td><?= $p['parinti_en'] ?></td>
 				<td><?= $p['data'] ?></td>
 				<td><a href="?pui&modifica&edit_id=<?= $p['id'] ?>">Modifica</a></td>
 				<td><img src="images/delete.png" class="delete-pui" id="<?= $p['id'] ?>" table="pui"/></td>

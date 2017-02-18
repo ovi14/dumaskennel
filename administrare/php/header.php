@@ -3,7 +3,7 @@
 <head>
 	<title>Duma's Kennel</title>
 	<link rel="stylesheet" type="text/css" href="http://<?= ADMIN_URL?>/css/jquery.dataTables.css">
-	<link rel="shortcut icon" href="http://<?= ADMIN_URL?>/media/images/favicon.ico" />
+	<link rel="shortcut icon" href="http://<?= ADMIN_URL?>/images/favicon.ico" />
 	<link rel="stylesheet" href="http://<?= ADMIN_URL?>/css/style.css" />
 	<link rel="stylesheet" href="http://<?= ADMIN_URL?>/css/jquery-ui.css" />
 
@@ -16,7 +16,7 @@
 
 		// TABLES
 		$(document).ready(function() {
-			$('#table_mops, #table_pui').DataTable({
+			$('#table_mops').DataTable({
 			  	"columns": [
 				    { "width": "30px" },
 				    null,
@@ -27,6 +27,20 @@
 			  	],
 			  	"columnDefs": [
 		        	{"className": "dt-center", "targets": [0,3,4,5]}
+		      	],
+		      	"iDisplayLength": 25
+			});
+
+			$('#table_pui').DataTable({
+			  	"columns": [
+				    { "width": "30px" },
+				    null,
+				    { "width": "100px" },
+				    { "width": "100px" },
+				    { "width": "50px" }
+			  	],
+			  	"columnDefs": [
+		        	{"className": "dt-center", "targets": [0,2,3,4]}
 		      	],
 		      	"iDisplayLength": 25
 			});

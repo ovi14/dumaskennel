@@ -46,8 +46,7 @@ function addMop($nume, $titlu, $sex, $parinti, $data, $pedigree,
 			    poza6, nume_en, titlu_en, parinti_en )
 			VALUES
 			  ('".escapeQuotes($nume)."', '".escapeQuotes($titlu)."', '".$sex."', '".escapeQuotes($parinti)."', '".$pedigree."', '".$data."', '".$poza1."', '".$poza2."', '".$poza3."', '".$poza4."', '".$poza5."', '".$poza6."', '".escapeQuotes($nume_en)."', '".escapeQuotes($titlu_en)."', '".escapeQuotes($parinti_en)."')";
-	// echo $sql;
-	mysql_query(mysql_real_escape_string($sql), $sock);
+	mysql_query($sql, $sock);
 	
 }
 
