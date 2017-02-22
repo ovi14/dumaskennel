@@ -20,7 +20,7 @@ $pui = getPui();
                         <h2><?= $p['parinti'] ?></h2>
                         <a target="blank" href="details.php?pui=<?= $p['id'] ?>">Click for details</a>
                       </td>
-                      <td><img width="280" src="administrare/media/<?= $p['poza1'] ?>"/></td>
+                      <td><img width="450" src="administrare/media/<?= $p['poza1'] ?>"/></td>
                     </tr>
                 <?php
                 } ?>

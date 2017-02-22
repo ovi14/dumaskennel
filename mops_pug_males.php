@@ -24,7 +24,7 @@ $mops = getMops();
                     <h3><?= $mop['parinti'] ?></h3>
                     <a target="blank" href="details.php?mop=<?= $mop['id'] ?>">Click for details</a>
                   </td>
-                  <td><img width="280" src="administrare/media/<?= $mop['poza1'] ?>"/></td>
+                  <td><img width="450" src="administrare/media/<?= $mop['poza1'] ?>"/></td>
                 </tr>
             <?php
               }

@@ -5,9 +5,9 @@ $row = array();
 if(isset($_GET['mop'])) {
   $row = getMopById($_GET['mop']);
 } else if(isset($_GET['pui'])) {
-  $row = getPuiById($_GET['mop']);
+  $row = getPuiById($_GET['pui']);
 } else if(isset($_GET['monta'])) {
-  $row = getMontaById($_GET['mop']);
+  $row = getMontaById($_GET['monta']);
 }
 
 // print_r('<pre>');
@@ -50,14 +50,12 @@ if(isset($_GET['mop'])) {
 
             <?php if($row['poza1'] != "") { ?>
               <br>
-              <img src="administrare/media/<?= $row['poza1'] ?>"  width="600"/> 
+              <img src="administrare/media/<?= $row['poza1'] ?>"  width="870"/> 
             <?php } ?> 
             <?php if($row['pedigree'] != "") { ?>
               <br>
               <div>Pedigree:</div>
-              <a target="_blank" href="administrare/media/<?= $row['pedigree'] ?>">
-                <img src="administrare/media/<?= $row['pedigree'] ?>" width="600"/>
-              </a>
+              <a target="_blank" href="administrare/media/<?= $row['pedigree'] ?>"><img src="administrare/media/<?= $row['pedigree'] ?>" width="870"/></a>
             <?php } ?> 
 
             <?php if(($row['poza2'] != "") || ($row['poza3'] != "") || ($row['poza4'] != "") || ($row['poza5'] != "") || ($row['poza6'] != "")) { ?>
@@ -65,23 +63,23 @@ if(isset($_GET['mop'])) {
               <div>Photo Galery:</div>
               <?php if($row['poza2'] != "") { ?>
                 <br>
-                <img src="administrare/media/<?= $row['poza2'] ?>"  width="600"/> 
+                <img src="administrare/media/<?= $row['poza2'] ?>"  width="870"/> 
               <?php } ?> 
               <?php if($row['poza3'] != "") { ?>
                 <br>
-                <img src="administrare/media/<?= $row['poza3'] ?>"  width="600"/> 
+                <img src="administrare/media/<?= $row['poza3'] ?>"  width="870"/> 
               <?php } ?> 
               <?php if($row['poza4'] != "") { ?>
                 <br>
-                <img src="administrare/media/<?= $row['poza4'] ?>"  width="600"/> 
+                <img src="administrare/media/<?= $row['poza4'] ?>"  width="870"/> 
               <?php } ?> 
               <?php if($row['poza5'] != "") { ?>
                 <br>
-                <img src="administrare/media/<?= $row['poza5'] ?>"  width="600"/> 
+                <img src="administrare/media/<?= $row['poza5'] ?>"  width="870"/> 
               <?php } ?> 
               <?php if($row['poza6'] != "") { ?>
                 <br>
-                <img src="administrare/media/<?= $row['poza6'] ?>"  width="600"/> 
+                <img src="administrare/media/<?= $row['poza6'] ?>"  width="870"/> 
               <?php } ?> 
             <?php } ?> 
 

@@ -21,7 +21,7 @@ $monta = getMonta();
                       </td>
                     <tr>
                       <td>
-                        <img width="600" src="administrare/media/<?= $m['poza1'] ?>"/>
+                        <img width="870" src="administrare/media/<?= $m['poza1'] ?>"/>
                       </td>
                     </tr>
                 <?php
