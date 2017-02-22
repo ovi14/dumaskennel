@@ -8,7 +8,6 @@
           <p></p>
         </div>
         <div class="article">
-            <h3><i>Use the menu from the right to navigate through the site</i></h3>
             <h3><i>Click on the links of Mops/Pug to find the pupppy that you wish</i></h3>
             <h3><i>You can go through all the litters, males and females that were until now and are planned</i></h3>
             <h3><i>You can click on each dog also to see it's pedigree</i></h3>
