@@ -3,11 +3,26 @@
       <div class="mainbar">
         <div class="article">
             <h2>Contact Duma's Kennel</h2>
-            <h3>Duma Loredana - <i>mops and french bulldog breeder</i></h3>
-            <h3>Address:&nbsp;&nbsp;&nbsp;<i>Timisoara, Romania</i></h3>
-            <h3>phone:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>0040(0)728392616</i></h3>
-            <h3>email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>contact@dumaskennel.com</i></h3>
-            <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp<i>dumaloredana45@yahoo.com</i></h3>
+            <h3>Duma Loredana - <i>mops breeder</i></h3>
+
+            <table style="font-size: 15px" cellpadding="7">
+              <tr>
+                <td><b>Address:</b></td>
+                <td><b><i>Timisoara, Romania</i></b></td>
+              </tr>
+              <tr>
+                <td><b>Phone:</b></td>
+                <td><b><i>0040(0)728392616</i></b></td>
+              </tr>
+              <tr>
+                <td><b>email:</b></td>
+                <td><b><i>contact@dumaskennel.com</i></b></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><b><i>dumaloredana45@yahoo.com</i></b></td>
+              </tr>
+            </table>
         </div>
         <div class="article">
             <!-- contact form here -->
