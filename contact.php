@@ -2,20 +2,20 @@
 
       <div class="mainbar">
         <div class="article">
-            <h2>Contact Duma's Kennel</h2>
-            <h3>Duma Loredana - <i>mops breeder</i></h3>
+            <h2><?= $lang[$lg]['contact_title']?></h2>
+            <h3><?= $lang[$lg]['contact_person']?></h3>
 
             <table style="font-size: 15px" cellpadding="7">
               <tr>
-                <td><b>Address:</b></td>
+                <td><b><?= $lang[$lg]['contact_address']?>:</b></td>
                 <td><b><i>Timisoara, Romania</i></b></td>
               </tr>
               <tr>
-                <td><b>Phone:</b></td>
+                <td><b><?= $lang[$lg]['contact_phone']?>:</b></td>
                 <td><b><i>0040(0)728392616</i></b></td>
               </tr>
               <tr>
-                <td><b>email:</b></td>
+                <td><b><?= $lang[$lg]['contact_email']?>:</b></td>
                 <td><b><i>contact@dumaskennel.com</i></b></td>
               </tr>
               <tr>

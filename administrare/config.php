@@ -11,6 +11,7 @@
 	
 	require_once('connect_db.php');
 	require_once(dirname(__FILE__).'/php/functions.php');	
+	require_once(dirname(__FILE__).'/php/lang.php');	
 
 	$time_zone = "Europe/Bucharest";
 	date_default_timezone_set($time_zone);

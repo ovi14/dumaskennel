@@ -9,7 +9,7 @@ $pui = getPui();
 
       <div class="mainbar">
         <div class="article">
-          <h2><span>Puppies at Duma's Kennel</span></h2> 
+          <h2><span><?= $lang[$lg]['puppies_title']?></span></h2> 
         </div>
         <div class="article">
             <table>        
@@ -17,8 +17,8 @@ $pui = getPui();
                 foreach ($pui as $p) { ?>
                     <tr>
                       <td align="left" width="50%">
-                        <h2><?= $p['parinti'] ?></h2>
-                        <a target="blank" href="details.php?pui=<?= $p['id'] ?>">Click for details</a>
+                        <h2><?= $p['parinti_en'] ?></h2>
+                        <a target="blank" href="details.php?pui=<?= $p['id'] .'&'. $lg_param ?>"><?= $lang[$lg]['click_for_details']?></a>
                       </td>
                       <td><img width="450" src="administrare/media/<?= $p['poza1'] ?>"/></td>
                     </tr>

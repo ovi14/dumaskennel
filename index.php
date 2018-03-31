@@ -2,16 +2,16 @@
 
       <div class="mainbar">
         <div class="article">
-          <h2><span>Welcome to the official website of <i>Duma's Kennel</i></span></h2>
+          <h2><span><?= $lang[$lg]['home_welcome']?></span></h2>
           <p></p>
-          <h3><span>Best quallity for mops/pug dogs</span></h3>
+          <h3><span><?= $lang[$lg]['home_subtitle']?></span></h3>
           <p></p>
         </div>
         <div class="article">
-            <h3><i>Click on the links of Mops/Pug to find the pupppy that you wish</i></h3>
-            <h3><i>You can go through all the litters, males and females that were until now and are planned</i></h3>
-            <h3><i>You can click on each dog also to see it's pedigree</i></h3>
-            <h3><i>Enjoy your visit and don't hesitate to make a call or write an email</i></h3>
+            <h3><i><?= $lang[$lg]['home_text1']?></i></h3>
+            <h3><i><?= $lang[$lg]['home_text2']?></i></h3>
+            <h3><i><?= $lang[$lg]['home_text3']?></i></h3>
+            <h3><i><?= $lang[$lg]['home_text4']?></i></h3>
         </div>
       </div>
 

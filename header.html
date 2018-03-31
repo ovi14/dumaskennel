@@ -3,7 +3,20 @@
 Design by http://www.bluewebtemplates.com
 Released for free under a Creative Commons Attribution 3.0 License
 -->
-<?php include('./administrare/config.php'); ?>
+<?php 
+include('./administrare/config.php'); 
+$lg = (isset($_GET['lang']) && $_GET['lang'] == 'ro') ? 'ro' : 'en';
+$lg_param = (isset($_GET['lang']) && $_GET['lang'] == 'ro') ? 'lang=ro' : '';
+
+// for language change
+$params = '';
+foreach ($_GET as $key => $value) {
+  if ($key != 'lang') {
+    $params = $key.'='.$value.'&';
+  }
+}
+
+?>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -16,6 +29,14 @@ Released for free under a Creative Commons Attribution 3.0 License
 <div class="main">
 
   <div class="header">
+    <div class="language-flags">
+      <a href="?<?= $params ?>lang=en">
+        <img src="images/uk.png" class="flag" title="English"/>
+      </a>
+      <a href="?<?= $params ?>lang=ro">
+        <img src="images/ro.png" class="flag" title="Romana"/>
+      </a>
+    </div>
     <div class="header_resize">
       <div class="logo"><h1><a href="index.php">Duma's Kennel</a></h1></div>
       <!-- <div class="menu_nav">
@@ -29,27 +50,27 @@ Released for free under a Creative Commons Attribution 3.0 License
         </div> -->
         <nav>
           <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="#">Our Dogs</a>
+            <li><a href="index.php?<?= $lg_param ?>"><?= $lang[$lg]['nav_home']?></a></li>
+            <li><a href="#"><?= $lang[$lg]['nav_our_dogs']?></a>
               <ul>
-                <li><a href="mops_pug_males.php">Males</a></li>
-                <li><a href="mops_pug_females.php">Females</a></li>
+                <li><a href="mops_pug_males.php?<?= $lg_param ?>"><?= $lang[$lg]['nav_males']?></a></li>
+                <li><a href="mops_pug_females.php?<?= $lg_param ?>"><?= $lang[$lg]['nav_females']?></a></li>
               </ul>
             </li>
-            <li><a href="#">Puppies</a>
+            <li><a href="#"><?= $lang[$lg]['nav_puppies']?></a>
               <ul>
-                <li><a href="mops_pug_current_puppies.php">Current Puppies</a></li>
-                <li><a href="mops_pug_litters.php">Mating Plan</a></li>
+                <li><a href="mops_pug_current_puppies.php?<?= $lg_param ?>"><?= $lang[$lg]['nav_current_puppies']?></a></li>
+                <li><a href="mops_pug_litters.php?<?= $lg_param ?>"><?= $lang[$lg]['nav_mating_plan']?></a></li>
               </ul>
             </li>
-            <li><a href="#">About Pug</a>
+            <li><a href="#"><?= $lang[$lg]['nav_about_pug']?></a>
               <ul>
-                <li><a href="standard.php">Standard</a></li>
-                <li><a href="maintenance.php">Maintenance</a></li>
-                <li><a href="diseases.php">Diseases</a></li>
+                <li><a href="standard.php?<?= $lg_param ?>"><?= $lang[$lg]['nav_standard']?></a></li>
+                <li><a href="maintenance.php?<?= $lg_param ?>"><?= $lang[$lg]['nav_maintenance']?></a></li>
+                <li><a href="diseases.php?<?= $lg_param ?>"><?= $lang[$lg]['nav_diseases']?></a></li>
               </ul>
             </li>
-            <li><a href="contact.php">Contact Us</a></li>
+            <li><a href="contact.php?<?= $lg_param ?>"><?= $lang[$lg]['nav_contact_us']?></a></li>
           </ul>
         </nav>
 

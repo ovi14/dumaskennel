@@ -18,31 +18,31 @@ if(isset($_GET['mop'])) {
       <div class="mainbar">
         <div class="article">
 
-          <h2><span><?= $row['nume']?></span></h2>
+          <h2><span><?= $row['nume_en']?></span></h2>
           <div class="details-container">
       			<table id="details_table" border="0">
               <?php 
-              if($row['titlu'] != "") { ?>
+              if($row['titlu_en'] != "") { ?>
                 <tr>
-                  <td width="20%">Title:</td>
-                  <td><?= $row['titlu'] ?></td>
+                  <td width="20%"><?= $lang[$lg]['details_title']?>:</td>
+                  <td><?= $row['titlu_en'] ?></td>
                 </tr>  
               <?php } 
-              if($row['parinti'] != "") { ?>
+              if($row['parinti_en'] != "") { ?>
                 <tr>
-                  <td>Parents:</td>
-                  <td><?= $row['parinti'] ?></td>
+                  <td><?= $lang[$lg]['details_parents']?>:</td>
+                  <td><?= $row['parinti_en'] ?></td>
                 </tr>  
               <?php }  
               if($row['sex'] != "") { ?>
                 <tr>
-                  <td>Gender:</td>
-                  <td><?= ($row['sex']==1 ? "male" : "female") ?></td>
+                  <td><?= $lang[$lg]['details_gender']?>:</td>
+                  <td><?= ($row['sex']==1 ? $lang[$lg]['details_male'] : $lang[$lg]['details_female']) ?></td>
                 </tr>  
               <?php }  
               if($row['data'] != "") { ?>
                 <tr>
-                  <td>Date:</td>
+                  <td><?= $lang[$lg]['details_date']?>:</td>
                   <td><?= $row['data'] ?></td>
                 </tr>  
               <?php } ?>           
@@ -54,13 +54,13 @@ if(isset($_GET['mop'])) {
             <?php } ?> 
             <?php if($row['pedigree'] != "") { ?>
               <br>
-              <div>Pedigree:</div>
+              <div><?= $lang[$lg]['details_pedigree']?>:</div>
               <a target="_blank" href="administrare/media/<?= $row['pedigree'] ?>"><img src="administrare/media/<?= $row['pedigree'] ?>" width="870"/></a>
             <?php } ?> 
 
             <?php if(($row['poza2'] != "") || ($row['poza3'] != "") || ($row['poza4'] != "") || ($row['poza5'] != "") || ($row['poza6'] != "")) { ?>
               <br>
-              <div>Photo Galery:</div>
+              <div><?= $lang[$lg]['details_galery']?>:</div>
               <?php if($row['poza2'] != "") { ?>
                 <br>
                 <img src="administrare/media/<?= $row['poza2'] ?>"  width="870"/> 

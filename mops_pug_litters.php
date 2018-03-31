@@ -9,7 +9,7 @@ $monta = getMonta();
 
       <div class="mainbar">
         <div class="article">
-          <h2><span>New matings at Duma's Kennel !!!!!!! </span></h2>
+          <h2><span><?= $lang[$lg]['litters_title']?></span></h2>
         </div>
         <div class="article">
             <table>        
