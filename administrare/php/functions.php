@@ -252,9 +252,10 @@ function deleteById($id, $table) {
 	mysql_query($sql);
 }
 
+// on the server this function is not needed since the escape is alreay done
 function escapeQuotes($string) {
-	$string = str_replace("'", "\'", $string);
-	$string = str_replace('"', '\"', $string);
+	// $string = str_replace("'", "\'", $string);
+	// $string = str_replace('"', '\"', $string);
 	return $string;
 }
 
