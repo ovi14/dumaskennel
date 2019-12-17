@@ -16,12 +16,13 @@ $mops = getMops();
     			<table>        
             <?php 
             foreach ($mops as $mop) {
+              $mop = formatRowByLang($mop, $lg);
               if ($mop['sex'] == 1 /* mascul */) { ?>
                 <tr>
                   <td align="left" width="50%">
-                    <h2><?= $mop['nume_en'] ?></h2>
-                    <h3><?= $mop['titlu_en'] ?></h3>
-                    <h3><?= $mop['parinti_en'] ?></h3>
+                    <h2><?= $mop['nume_afis'] ?></h2>
+                    <h3><?= $mop['titlu_afis'] ?></h3>
+                    <h3><?= $mop['parinti_afis'] ?></h3>
                     <a href="details.php?mop=<?= $mop['id'] .'&'. $lg_param ?>"><?= $lang[$lg]['click_for_details']?></a>
                   </td>
                   <td><img width="450" src="administrare/media/<?= $mop['poza1'] ?>"/></td>

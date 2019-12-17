@@ -11,11 +11,11 @@ if (isset($_GET['mops']) && isset($_POST['submit'])) {
 	if (isset($_GET['edit_id'])) {	// update
 		updateMop(	$_GET['edit_id'], $_POST['nume'], $_POST['titlu'], $_POST['sex'], $_POST['parinti'], $_POST['data'], 
 					$_POST['poza0'], $_POST['poza1'], $_POST['poza2'], $_POST['poza3'], $_POST['poza4'], 
-					$_POST['poza5'], $_POST['poza6'], $_POST['nume_en'], $_POST['titlu_en'], $_POST['parinti_en'] );
+					$_POST['poza5'], $_POST['poza6'], $_POST['nume_en'], $_POST['titlu_en'], $_POST['parinti_en'], $_POST['descriere'], $_POST['descriere_en'] );
 	} else {	// insert
 		addMop(	$_POST['nume'], $_POST['titlu'], $_POST['sex'], $_POST['parinti'], $_POST['data'], $_POST['poza0'], 
 				$_POST['poza1'], $_POST['poza2'], $_POST['poza3'], $_POST['poza4'], $_POST['poza5'], 
-				$_POST['poza6'], $_POST['nume_en'], $_POST['titlu_en'], $_POST['parinti_en'] );
+				$_POST['poza6'], $_POST['nume_en'], $_POST['titlu_en'], $_POST['parinti_en'], $_POST['descriere'], $_POST['descriere_en'] );
 	}
 }
 
@@ -37,6 +37,8 @@ $mop_edit = array(
 		"nume_en" => "",
 		"titlu_en" => "",
 		"parinti_en" => "",
+		"descriere" => "",
+		"descriere_en" => "",
 	);
 if (isset($_GET['modifica']) && isset($_GET['edit_id']) && $_GET['edit_id'] != "") {
 	$mop_edit = getMopById($_GET['edit_id']);
@@ -95,6 +97,11 @@ $mops_params = isset($_GET['edit_id']) ? "&edit_id=".$_GET['edit_id'] : "";
 				<tr>
 					<td>Data: </td>
 					<td><input type="text" name="data" value="<?= $mop_edit['data']?>" id="mops_date" /></td>
+				</tr>
+				<tr>
+					<td>Descriere: </td>
+					<td><textarea rows="8" name="descriere_en"><?= $mop_edit['descriere_en']?></textarea></td>
+					<td><textarea rows="8" name="descriere"><?= $mop_edit['descriere']?></textarea></td>
 				</tr>
 				<tr>
 					<td>Pedigree: </td>

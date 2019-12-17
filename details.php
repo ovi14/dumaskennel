@@ -10,28 +10,32 @@ if(isset($_GET['mop'])) {
   $row = getMontaById($_GET['monta']);
 }
 
+$row = formatRowByLang($row, $lg);
+
 // print_r('<pre>');
 // print_r($row);
 // print_r('</pre>');
+
+
 ?>
 
       <div class="mainbar">
         <div class="article">
 
-          <h2><span><?= $row['nume_en']?></span></h2>
+          <h2><span><?= $row['nume_afis']?></span></h2>
           <div class="details-container">
       			<table id="details_table" border="0">
               <?php 
-              if($row['titlu_en'] != "") { ?>
+              if($row['titlu_afis'] != "") { ?>
                 <tr>
                   <td width="20%"><?= $lang[$lg]['details_title']?>:</td>
-                  <td><?= $row['titlu_en'] ?></td>
+                  <td><?= $row['titlu_afis'] ?></td>
                 </tr>  
               <?php } 
-              if($row['parinti_en'] != "") { ?>
+              if($row['parinti_afis'] != "") { ?>
                 <tr>
                   <td><?= $lang[$lg]['details_parents']?>:</td>
-                  <td><?= $row['parinti_en'] ?></td>
+                  <td><?= $row['parinti_afis'] ?></td>
                 </tr>  
               <?php }  
               if($row['sex'] != "") { ?>
@@ -45,6 +49,12 @@ if(isset($_GET['mop'])) {
                   <td><?= $lang[$lg]['details_date']?>:</td>
                   <td><?= $row['data'] ?></td>
                 </tr>  
+              <?php }       
+              if($row['descriere_afis'] != "") { ?>
+                <tr>
+                  <td><?= $lang[$lg]['details_description']?>:</td>
+                  <td><?= $row['descriere_afis'] ?></td>
+                </tr>  
               <?php } ?>           
       			</table>
 
@@ -55,7 +65,7 @@ if(isset($_GET['mop'])) {
             <?php if($row['pedigree'] != "") { ?>
               <br>
               <div><?= $lang[$lg]['details_pedigree']?>:</div>
-              <a target="_blank" href="administrare/media/<?= $row['pedigree'] ?>"><img src="administrare/media/<?= $row['pedigree'] ?>" width="870"/></a>
+              <a href="administrare/media/<?= $row['pedigree'] ?>"><img src="administrare/media/<?= $row['pedigree'] ?>" width="870"/></a>
             <?php } ?> 
 
             <?php if(($row['poza2'] != "") || ($row['poza3'] != "") || ($row['poza4'] != "") || ($row['poza5'] != "") || ($row['poza6'] != "")) { ?>

@@ -11,11 +11,11 @@ if (isset($_GET['pui']) && isset($_POST['submit'])) {
 	if (isset($_GET['edit_id'])) {	// update
 		updatePui(	$_GET['edit_id'], $_POST['nume'], $_POST['titlu'], $_POST['sex'], $_POST['parinti'], $_POST['data'], 
 					$_POST['poza0'], $_POST['poza1'], $_POST['poza2'], $_POST['poza3'], $_POST['poza4'], 
-					$_POST['poza5'], $_POST['poza6'], $_POST['nume_en'], $_POST['titlu_en'], $_POST['parinti_en'] );
+					$_POST['poza5'], $_POST['poza6'], $_POST['nume_en'], $_POST['titlu_en'], $_POST['parinti_en'], $_POST['descriere'], $_POST['descriere_en'] );
 	} else {	// insert
 		addPui(	$_POST['nume'], $_POST['titlu'], $_POST['sex'], $_POST['parinti'], $_POST['data'], $_POST['poza0'], 
 				$_POST['poza1'], $_POST['poza2'], $_POST['poza3'], $_POST['poza4'], $_POST['poza5'], 
-				$_POST['poza6'], $_POST['nume_en'], $_POST['titlu_en'], $_POST['parinti_en'] );
+				$_POST['poza6'], $_POST['nume_en'], $_POST['titlu_en'], $_POST['parinti_en'], $_POST['descriere'], $_POST['descriere_en'] );
 	}
 }
 
@@ -37,6 +37,8 @@ $pui_edit = array(
 		"nume_en" => "",
 		"titlu_en" => "",
 		"parinti_en" => "",
+		"descriere" => "",
+		"descriere_en" => "",
 	);
 if (isset($_GET['modifica']) && isset($_GET['edit_id']) && $_GET['edit_id'] != "") {
 	$pui_edit = getPuiById($_GET['edit_id']);
@@ -95,6 +97,11 @@ $pui_params = isset($_GET['edit_id']) ? "&edit_id=".$_GET['edit_id'] : "";
 				<tr>
 					<td>Data: </td>
 					<td><input type="text" name="data" value="<?= $pui_edit['data']?>" id="pui_date" /></td>
+				</tr>
+				<tr>
+					<td>Descriere: </td>
+					<td><textarea rows="8" name="descriere_en"><?= $pui_edit['descriere_en']?></textarea></td>
+					<td><textarea rows="8" name="descriere"><?= $pui_edit['descriere']?></textarea></td>
 				</tr>
 				<tr>
 					<td>Pedigree: </td>

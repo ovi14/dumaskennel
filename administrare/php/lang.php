@@ -40,6 +40,7 @@ $lang = array (
 		"details_female" => "female",
 		"details_date" => "Date",
 		"details_pedigree" => "Pedigree",
+		"details_description" => "Description",
 		"details_galery" => "Photo Galery",
 
 		"puppies_title" => "Puppies at Duma's Kennel",
@@ -151,6 +152,7 @@ $lang = array (
 		"details_male" => "mascul",
 		"details_female" => "femelă",
 		"details_date" => "Data",
+		"details_description" => "Descriere",
 		"details_pedigree" => "Pedigree",
 		"details_galery" => "Galerie Foto",
 

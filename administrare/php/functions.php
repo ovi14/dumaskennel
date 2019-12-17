@@ -17,17 +17,17 @@ function check_login_data($user, $pass){
  * M O P S *
  ***********/
 function getMops() {
-	global $sock;
+	global $mysqli;
 	
 	$mops = array();
 
 	$sql = "SELECT * FROM mops 
 			WHERE del = 0
 			ORDER BY data DESC";
-	$res = mysql_query($sql, $sock);
+	$res = $mysqli->query($sql);
 
-	if ((is_Resource($res)) && (mysql_num_rows($res) > 0)) {
-		while($row = mysql_fetch_assoc($res)) {
+	if ($res->num_rows > 0) {
+		while($row = $res->fetch_assoc()) {
 			$mops[] = $row;
 		}
 	}
@@ -37,23 +37,26 @@ function getMops() {
 
 function addMop($nume, $titlu, $sex, $parinti, $data, $pedigree, 
 				$poza1, $poza2, $poza3, $poza4, $poza5, 
-				$poza6, $nume_en, $titlu_en, $parinti_en) {
-	global $sock;
+				$poza6, $nume_en, $titlu_en, $parinti_en, $descriere,
+				$descriere_en) {
+	global $mysqli;
 	
 	$sql = "INSERT INTO mops
 			  ( nume, titlu, sex, parinti, pedigree, data, 
 			    poza1, poza2, poza3, poza4, poza5, 
-			    poza6, nume_en, titlu_en, parinti_en )
+			    poza6, nume_en, titlu_en, parinti_en, descriere,
+			    descriere_en )
 			VALUES
-			  ('".escapeQuotes($nume)."', '".escapeQuotes($titlu)."', '".$sex."', '".escapeQuotes($parinti)."', '".$pedigree."', '".$data."', '".$poza1."', '".$poza2."', '".$poza3."', '".$poza4."', '".$poza5."', '".$poza6."', '".escapeQuotes($nume_en)."', '".escapeQuotes($titlu_en)."', '".escapeQuotes($parinti_en)."')";
-	mysql_query($sql, $sock);
+			  ('".escapeQuotes($nume)."', '".escapeQuotes($titlu)."', '".$sex."', '".escapeQuotes($parinti)."', '".$pedigree."', '".$data."', '".$poza1."', '".$poza2."', '".$poza3."', '".$poza4."', '".$poza5."', '".$poza6."', '".escapeQuotes($nume_en)."', '".escapeQuotes($titlu_en)."', '".escapeQuotes($parinti_en)."', '".escapeQuotes($descriere)."', '".escapeQuotes($descriere_en)."')";
+	$mysqli->query($sql);
 	
 }
 
 function updateMop( $id, $nume, $titlu, $sex, $parinti, $data, 
 					$pedigree, $poza1, $poza2, $poza3, $poza4, 
-					$poza5, $poza6, $nume_en, $titlu_en, $parinti_en ) {
-	global $sock;
+					$poza5, $poza6, $nume_en, $titlu_en, $parinti_en, $descriere,
+				    $descriere_en ) {
+	global $mysqli;
 	
 	$sql = "UPDATE mops
 			SET
@@ -71,25 +74,29 @@ function updateMop( $id, $nume, $titlu, $sex, $parinti, $data,
 				poza6 = '".$poza6."',
 				nume_en = '".escapeQuotes($nume_en)."',
 				titlu_en = '".escapeQuotes($titlu_en)."',
-				parinti_en = '".escapeQuotes($parinti_en)."'
+				parinti_en = '".escapeQuotes($parinti_en)."',
+				descriere = '".escapeQuotes($descriere)."',
+				descriere_en = '".escapeQuotes($descriere_en)."'
 			WHERE
 			  id = ".$id;
 	// echo $sql;		  
-	mysql_query($sql, $sock);	
+	$mysqli->query($sql);
+	/*if(!$mysqli->query($sql))
+		print_r($mysqli->error);*/	
 }
 
 function getMopById($id_mop){
-	global $sock;
+	global $mysqli;
 	
 	$row = array();
 
 	$sql = "SELECT * FROM mops 
 			WHERE id=".$id_mop."
 			  AND del=0";
-	$res = mysql_query($sql, $sock);
+	$res = $mysqli->query($sql);
 
-	if ((is_Resource($res)) && (mysql_num_rows($res) > 0)) {
-		$row = mysql_fetch_assoc($res);
+	if ($res->num_rows > 0) {
+		$row = $res->fetch_assoc();
 	}
 
 	return $row;
@@ -99,17 +106,17 @@ function getMopById($id_mop){
  * P U I *
  *********/
 function getPui() {
-	global $sock;
+	global $mysqli;
 	
 	$pui = array();
 
 	$sql = "SELECT * FROM pui 
 			WHERE del = 0
 			ORDER BY data DESC";
-	$res = mysql_query($sql, $sock);
+	$res = $mysqli->query($sql);
 
-	if ((is_Resource($res)) && (mysql_num_rows($res) > 0)) {
-		while($row = mysql_fetch_assoc($res)) {
+	if ($res->num_rows > 0) {
+		while($row = $res->fetch_assoc()) {
 			$pui[] = $row;
 		}
 	}
@@ -119,24 +126,27 @@ function getPui() {
 
 function addPui($nume, $titlu, $sex, $parinti, $data, $pedigree, 
 				$poza1, $poza2, $poza3, $poza4, $poza5, 
-				$poza6, $nume_en, $titlu_en, $parinti_en) {
-	global $sock;
+				$poza6, $nume_en, $titlu_en, $parinti_en, $descriere,
+				$descriere_en) {
+	global $mysqli;
 	
 	$sql = "INSERT INTO pui
 			  ( nume, titlu, sex, parinti, pedigree, data, 
 			    poza1, poza2, poza3, poza4, poza5, 
-			    poza6, nume_en, titlu_en, parinti_en )
+			    poza6, nume_en, titlu_en, parinti_en, descriere,
+			    descriere_en )
 			VALUES
-			  ('".escapeQuotes($nume)."', '".escapeQuotes($titlu)."', '".$sex."', '".escapeQuotes($parinti)."', '".$pedigree."', '".$data."', '".$poza1."', '".$poza2."', '".$poza3."', '".$poza4."', '".$poza5."', '".$poza6."', '".escapeQuotes($nume_en)."', '".escapeQuotes($titlu_en)."', '".escapeQuotes($parinti_en)."')";
+			  ('".escapeQuotes($nume)."', '".escapeQuotes($titlu)."', '".$sex."', '".escapeQuotes($parinti)."', '".$pedigree."', '".$data."', '".$poza1."', '".$poza2."', '".$poza3."', '".$poza4."', '".$poza5."', '".$poza6."', '".escapeQuotes($nume_en)."', '".escapeQuotes($titlu_en)."', '".escapeQuotes($parinti_en)."', '".escapeQuotes($descriere)."', '".escapeQuotes($descriere_en)."')";
 	// echo $sql;
-	mysql_query($sql, $sock);
+	$mysqli->query($sql);
 	
 }
 
 function updatePui( $id, $nume, $titlu, $sex, $parinti, $data, 
 					$pedigree, $poza1, $poza2, $poza3, $poza4, 
-					$poza5, $poza6, $nume_en, $titlu_en, $parinti_en ) {
-	global $sock;
+					$poza5, $poza6, $nume_en, $titlu_en, $parinti_en, $descriere,
+				    $descriere_en ) {
+	global $mysqli;
 	
 	$sql = "UPDATE pui
 			SET
@@ -154,25 +164,27 @@ function updatePui( $id, $nume, $titlu, $sex, $parinti, $data,
 				poza6 = '".$poza6."',
 				nume_en = '".escapeQuotes($nume_en)."',
 				titlu_en = '".escapeQuotes($titlu_en)."',
-				parinti_en = '".escapeQuotes($parinti_en)."'
+				parinti_en = '".escapeQuotes($parinti_en)."',
+				descriere = '".escapeQuotes($descriere)."',
+				descriere_en = '".escapeQuotes($descriere_en)."'
 			WHERE
 			  id = ".$id;
 	// echo $sql;		  
-	mysql_query($sql, $sock);	
+	$mysqli->query($sql);
 }
 
 function getPuiById($id_pui){
-	global $sock;
+	global $mysqli;
 	
 	$row = array();
 
 	$sql = "SELECT * FROM pui 
 			WHERE id=".$id_pui."
 			  AND del=0";
-	$res = mysql_query($sql, $sock);
+	$res = $mysqli->query($sql);
 
-	if ((is_Resource($res)) && (mysql_num_rows($res) > 0)) {
-		$row = mysql_fetch_assoc($res);
+	if ($res->num_rows > 0) {
+		$row = $res->fetch_assoc();
 	}
 
 	return $row;
@@ -182,17 +194,17 @@ function getPuiById($id_pui){
  * M O N T A *
  *************/
 function getMonta() {
-	global $sock;
+	global $mysqli;
 	
 	$monta = array();
 
 	$sql = "SELECT * FROM monta 
 			WHERE del = 0
 			ORDER BY data DESC";
-	$res = mysql_query($sql, $sock);
+	$res = $mysqli->query($sql);
 
-	if ((is_Resource($res)) && (mysql_num_rows($res) > 0)) {
-		while($row = mysql_fetch_assoc($res)) {
+	if ($res->num_rows > 0) {
+		while($row = $res->fetch_assoc()) {
 			$monta[] = $row;
 		}
 	}
@@ -201,19 +213,19 @@ function getMonta() {
 }
 
 function addMonta($data, $poza1) {
-	global $sock;
+	global $mysqli;
 	
 	$sql = "INSERT INTO monta
 			  ( data, poza1 )
 			VALUES
 			  ('".$data."', '".$poza1."')";
 	// echo $sql;
-	mysql_query($sql, $sock);
+	$mysqli->query($sql);
 	
 }
 
 function updateMonta( $id, $data, $poza1 ) {
-	global $sock;
+	global $mysqli;
 	
 	$sql = "UPDATE monta
 			SET
@@ -222,40 +234,64 @@ function updateMonta( $id, $data, $poza1 ) {
 			WHERE
 			  id = ".$id;
 	// echo $sql;		  
-	mysql_query($sql, $sock);	
+	$mysqli->query($sql);
 }
 
 function getMontaById($id_monta){
-	global $sock;
+	global $mysqli;
 	
 	$row = array();
 
 	$sql = "SELECT * FROM monta 
 			WHERE id=".$id_monta."
 			  AND del=0";
-	$res = mysql_query($sql, $sock);
+	$res = $mysqli->query($sql);
 
-	if ((is_Resource($res)) && (mysql_num_rows($res) > 0)) {
-		$row = mysql_fetch_assoc($res);
+	if ($res->num_rows > 0) {
+		$row = $res->fetch_assoc();
 	}
 
 	return $row;
 }
 
 function deleteById($id, $table) {
-	global $sock;
+	global $mysqli;
 
 	$sql = "UPDATE ".$table." 
 			SET del = 1
 			WHERE id = ".$id;
-	echo $sql;
-	mysql_query($sql);
+	// echo $sql;
+	$mysqli->query($sql);
 }
 
-// on the server this function is not needed since the escape is alreay done
+function formatRowByLang($row, $lg) {
+
+	if (!isset($row['nume']))	//skip "monta"
+		return $row;
+	else {
+		if ($lg == 'en') {
+			$row['nume_afis'] = $row['nume_en'] == '' ? $row['nume'] : $row['nume_en'];
+			$row['titlu_afis'] = $row['titlu_en'] == '' ? $row['titlu'] : $row['titlu_en'];
+			$row['parinti_afis'] = $row['parinti_en'] == '' ? $row['parinti'] : $row['parinti_en'];
+			$row['descriere_afis'] = $row['descriere_en'] == '' ? $row['descriere'] : $row['descriere_en'];
+		} else if ($lg == 'ro') {
+			$row['nume_afis'] = $row['nume'] == '' ? $row['nume_en'] : $row['nume'];
+			$row['titlu_afis'] = $row['titlu'] == '' ? $row['titlu_en'] : $row['titlu'];
+			$row['parinti_afis'] = $row['parinti'] == '' ? $row['parinti_en'] : $row['parinti'];
+			$row['descriere_afis'] = $row['descriere'] == '' ? $row['descriere_en'] : $row['descriere'];
+		}
+	}
+
+	$row['descriere_afis'] = nl2br($row['descriere_afis']); // replace new lines with <br>
+
+	return $row;
+}
+
+// on the server might be different
 function escapeQuotes($string) {
-	// $string = str_replace("'", "\'", $string);
-	// $string = str_replace('"', '\"', $string);
+	global $mysqli;
+
+	$string = $mysqli->real_escape_string($string);
 	return $string;
 }
 

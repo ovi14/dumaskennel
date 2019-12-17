@@ -57,6 +57,8 @@ CREATE TABLE `mops` (
   `titlu_en` varchar(255) NOT NULL,
   `pedigree_en` varchar(255) NOT NULL DEFAULT '',
   `parinti_en` varchar(255) NOT NULL,
+  `descriere` text NOT NULL DEFAULT '',
+  `descriere_en` text NOT NULL DEFAULT '',
   `del` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -84,6 +86,8 @@ CREATE TABLE `pui` (
   `titlu_en` varchar(255) NOT NULL,
   `pedigree_en` varchar(255) NOT NULL DEFAULT '',
   `parinti_en` varchar(255) NOT NULL,
+  `descriere` text NOT NULL DEFAULT '',
+  `descriere_en` text NOT NULL DEFAULT '',
   `del` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
