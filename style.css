@@ -66,7 +66,7 @@ a {
 .header_resize, .content_resize, .fbg_resize, .footer_resize {
   margin:0 auto; 
   padding:0 40px; 
-  width:890px;
+  max-width: 1000px;
 }
 
 .fbg, .footer {
@@ -82,8 +82,9 @@ a {
 
 /* header */
 .header {
-  height:90px; 
-  background:url(images/header_bg.gif) repeat-x top;
+  /*height:90px; */
+  /*background:url(images/header_bg.gif) repeat-x top;*/
+  background-color: #5e8f26;
 }
 
 .header .logo {
@@ -146,12 +147,13 @@ a {
 }
 
 .content img.ctop {
-  margin:20px 0 20px -20px;
+  margin: 20px 0 0 0;
+  width: 100%;
 }
 
 .content .mainbar {
   float:left; 
-  width:888px/*630px*/;
+  width: 100%;
 }
 
 .content .mainbar img {
@@ -159,6 +161,7 @@ a {
   padding:4px; 
   border:1px solid #b7b7b7; 
   background-color:#fff;
+  width: 100%;
 }
 
 .content .mainbar img.fl {
@@ -235,8 +238,8 @@ ul.ex_menu li a:hover {
 }
 
 .fbg_resize {
-  padding:0 0 16px 40px; 
-  width:930px;
+  /*padding:0 0 16px 40px; 
+  width:930px;*/
 }
 
 .fbg, .fbg a, .fbg h2 {
@@ -253,8 +256,8 @@ ul.ex_menu li a:hover {
 }
 
 .fbg .c1 {
-  padding:0 16px 0 0; 
-  width:620px;
+  /*padding:0 16px 0 0; */
+  width: 100%;
 }
 
 .fbg .c3 {
@@ -312,7 +315,7 @@ ul.fmenu li {
 }
 
 ul.fmenu li a {
-  color:#5f5f5f; 
+  color:#81b436;
   text-decoration:none; 
   padding:2px 6px;
 }
@@ -375,9 +378,9 @@ ol li .send {
 
 /* Menu Top */
 nav {
-  text-align: center;
-  padding-top: 30px;
-  margin-right: -90px;
+  text-align: right;
+  padding: 30px 0px 20px 0px;
+  /*margin-right: -90px;*/
   font-size: 15px;
   font-weight: bold;
 }
@@ -436,10 +439,10 @@ nav ul ul {
 }
 nav ul ul li {
     float: none; 
-  
     border-top: 1px solid #6b727c;
     border-bottom: 1px solid #575f6a;
     position: relative;
+    text-align: left;
   }
 nav ul ul li a {
       padding: 10px 25px;
@@ -457,8 +460,8 @@ nav ul ul li a:hover {
 .header .language-flags {
   display: block;
   margin: 0 auto;
-  padding: 0px 20px 10px 20px;
-  width: 890px;
+  padding: 0px 0px 15px 0px;
+  max-width: 1080px;
 }
 
 .header .language-flags .flag {
@@ -475,9 +478,22 @@ nav ul ul li a:hover {
   width: 25px;
 }
 
-
 .contact-tel, .contact-email{
   font-weight: bold;
   font-style: italic;
   color: #5f5f5f;
+}
+
+.pug-table {
+  width: 100%;
+}
+
+.pug-table tr td {
+  vertical-align: top;
+  padding-top: 40px;
+}
+
+.pug-table tr td h2 {
+  margin: 0px;
+  padding: 0px;
 }
