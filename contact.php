@@ -1,7 +1,7 @@
 <?php include('header.html') ?>
 
       <div class="mainbar">
-        <div class="article">
+        <div id="contactContainer" class="article">
             <h2><?= $lang[$lg]['contact_title']?></h2>
             <h3><?= $lang[$lg]['contact_person']?></h3>
 
@@ -12,15 +12,15 @@
               </tr>
               <tr>
                 <td><b><?= $lang[$lg]['contact_phone']?>:</b></td>
-                <td><b><i>0040(0)728392616</i></b></td>
+                <td><a href="tel:+40728392616" class="contact-tel">+40728 392 616</a></td>
               </tr>
               <tr>
                 <td><b><?= $lang[$lg]['contact_email']?>:</b></td>
-                <td><b><i>contact@dumaskennel.com</i></b></td>
+                <td><a href="mailto:contact@dumaskennel.com" class="contact-email">contact@dumaskennel.com</a></td>
               </tr>
               <tr>
                 <td></td>
-                <td><b><i>dumaloredana45@yahoo.com</i></b></td>
+                <td><a href="mailto:dumaloredana45@yahoo.com" class="contact-email">dumaloredana45@yahoo.com</a></td>
               </tr>
             </table>
         </div>
