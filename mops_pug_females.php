@@ -23,7 +23,7 @@ $mops = getMops();
                     <h2><?= $mop['nume_afis'] ?></h2>
                     <h3><?= $mop['titlu_afis'] ?></h3>
                     <h3><?= $mop['parinti_afis'] ?></h3>
-                    <a href="details.php?mop=<?= $mop['id'] .'&'. $lg_param ?>"><?= $lang[$lg]['click_for_details']?></a>
+                    <a href="details.php?mop=<?= $mop['id'] .'&'. $lg_param ?>"><h3><?= $lang[$lg]['click_for_details']?></h3></a>
                   </td>
                   <td><img src="administrare/media/<?= $mop['poza1'] ?>"/></td>
                 </tr>
