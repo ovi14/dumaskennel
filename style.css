@@ -392,6 +392,7 @@ ol li .send {
 
 /* Menu Top */
 nav {
+  display: block;
   text-align: right;
   padding: 30px 0px 20px 0px;
   /*margin-right: -90px;*/
@@ -428,10 +429,10 @@ nav ul {
   display: inline-table;
 }
 nav ul:after {
-    content: ""; 
+  content: ""; 
   clear: both; 
   display: block;
-  }
+}
 nav ul li {
   float: left;
 }
@@ -445,11 +446,11 @@ nav ul li:hover a {
       color: #fff;
     }
 nav ul li a {
-    display: block; 
+  display: block; 
   padding: 10px 25px;
-    color: #fff; 
+  color: #fff; 
   text-decoration: none;
-  }
+}
 nav ul ul {
   background: #5f6975; 
   border-radius: 0px; 
@@ -471,6 +472,111 @@ nav ul ul li a {
 nav ul ul li a:hover {
         background: #4b545f;
       }
+@media only screen and (max-width: 800px) {
+  nav ul ul {
+    position: relative;
+    width: 100%;
+  }
+  nav ul ul li {
+    text-align: right;
+  }
+}
+
+.header .menu-icon {
+  display: none;
+}
+
+.header .menu-btn {
+  display: none;
+}
+
+@media only screen and (max-width: 750px) {
+  nav {
+    display: none;
+    position: absolute;
+    padding: 50px 0px 0px 0px;
+    right: 0;
+    width: 220px;
+  }
+  nav ul li {
+    float: left;
+    width: 100%;
+  }
+  nav ul li a {
+    padding: 20px 30px;
+  }
+  nav ul {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+
+  .header .menu-btn:hover {
+    background-color: #f4f4f4;
+  }
+  /* menu icon */
+
+  .header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 25px 0px;
+    position: relative;
+    user-select: none;
+    z-index: 2;
+  }
+
+  .header .menu-icon .navicon {
+    background: #fff;
+    display: block;
+    height: 3px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+  }
+
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+    background: #fff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+  }
+
+  .header .menu-icon .navicon:before {
+    top: 5px;
+  }
+
+  .header .menu-icon .navicon:after {
+    top: -5px;
+  }
+
+  /* menu btn */
+
+  .header .menu-btn:checked ~ .menu {
+    max-height: 240px;
+  }
+
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+}
 /*.language-flags {
   float: right;
   padding-top: 10px;
@@ -490,19 +596,27 @@ nav ul ul li a:hover {
   margin: 15px 0px 0px 10px;
   width: 25px;
 }
-@media only screen and (max-width: 1025px) {
-  .header .language-flags .flag {
-    width: 40px;
-  }
-  .header .language-flags .flag:hover {
-    width: 40px;
-  }
-}
 .header .language-flags .flag:hover {
   float: right;
   border: 1px solid black;
   margin: 15px 0px 0px 10px;
   width: 25px;
+}
+@media only screen and (max-width: 1025px) {
+  .header .language-flags {
+    width: 100%;
+    height: 40px;
+    padding: 0px;
+  }
+  .header .language-flags .flag {
+    width: 30px;
+  }
+  .header .language-flags .flag:hover {
+    width: 30px;
+  }
+  .header .logo {
+    padding: 0px;
+  }
 }
 
 .contact-tel, .contact-email{
@@ -523,4 +637,9 @@ nav ul ul li a:hover {
 .pug-table tr td h2 {
   margin: 0px;
   padding: 0px;
+}
+
+#details_table tr td {
+  vertical-align: top;
+  padding-top: 15px;
 }

@@ -138,10 +138,10 @@ $lang = array (
 		"home_text3" => "Puteți da click pe fiecare câine pentru a-i vedea pedigree-ul",
 		"home_text4" => "Pentru orice informație legată de cățeii noștri, nu ezitați să sunați sau să scrieți un email",
 
-		"pug_males_text1" => "Câinii nostri la Duma's Kennel",
+		"pug_males_text1" => "Câinii noștri la Duma's Kennel",
 		"pug_males_text2" => "MASCULI - pugs la Duma's Kennel - derulați pentru a vedea toți masculii",
 
-		"pug_females_text1" => "Câinii nostri la Duma's Kennel",
+		"pug_females_text1" => "Câinii noștri la Duma's Kennel",
 		"pug_females_text2" => "FEMELE - pugs la Duma's Kennel - derulați pentru a vedea toate femelele",
 
 		"click_for_details" => "Click pentru detalii",
