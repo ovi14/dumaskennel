@@ -29,8 +29,14 @@
 </html>
 <script type="text/javascript">
 $(document).ready(function(){
+
   $(".menu-icon").click(function(){
     $("nav").toggle();
   });
+
+  $(".clickable-row").click(function(){
+    window.location = this.dataset.href;
+  });
+
 });
 </script>

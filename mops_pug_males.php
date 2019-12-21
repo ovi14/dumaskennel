@@ -18,7 +18,7 @@ $mops = getMops();
             foreach ($mops as $mop) {
               $mop = formatRowByLang($mop, $lg);
               if ($mop['sex'] == 1 /* mascul */) { ?>
-                <tr>
+                <tr class="clickable-row" data-href="details.php?mop=<?= $mop['id'] .'&'. $lg_param ?>">
                   <td align="left" width="55%">
                     <h2><?= $mop['nume_afis'] ?></h2>
                     <h3><?= $mop['titlu_afis'] ?></h3>
